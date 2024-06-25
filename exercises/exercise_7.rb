@@ -10,3 +10,16 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+
+puts "Enter store name:"
+print "> "
+store_name = gets.chomp
+
+new_store = Store.new name: store_name
+
+if new_store.save
+  puts "#{} store saved to DB"
+else
+  puts "Error saving store"
+  puts new_store.errors.full_messages
+end
